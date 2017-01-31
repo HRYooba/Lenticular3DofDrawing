@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "def.h"
 #include "AngleCalibration.h"
+#include "PitchCalibration.h"
 
 class CalibrationScene {
     
@@ -13,10 +14,12 @@ private:
     
     CalibrationData caliData;
     AngleCalibration angleCali;
+    PitchCalibration pitchCali;
     
 public:
     void setup();
     void update();
     void draw();
     void setPhase(int _phase);
+    void setData();
 };

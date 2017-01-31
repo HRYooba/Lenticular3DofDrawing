@@ -12,17 +12,19 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackground(100);
     caliScene.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if (key == ofToInt("a")) {
+    if (key == 'a') {
         caliScene.setPhase(CALIBRATION_PHASE_ANGLE);
     }
-    if (key == ofToInt("s")) {
+    if (key == 's') {
         caliScene.setPhase(CALIBRATION_PHASE_PITH);
     }
+    caliScene.setData();
 }
 
 //--------------------------------------------------------------

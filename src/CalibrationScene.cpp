@@ -6,6 +6,7 @@ void CalibrationScene::setup() {
     phase = CALIBRATION_PHASE_ANGLE;
     caliData = {0, 0};
     angleCali.setup();
+    pitchCali.setup();
 }
 
 void CalibrationScene::update() {
@@ -14,6 +15,7 @@ void CalibrationScene::update() {
             angleCali.update();
             break;
         case CALIBRATION_PHASE_PITH:
+            pitchCali.update();
             break;
     }
 }
@@ -24,10 +26,17 @@ void CalibrationScene::draw() {
             angleCali.draw();
             break;
         case CALIBRATION_PHASE_PITH:
+            pitchCali.draw();
             break;
     }
 }
 
 void CalibrationScene::setPhase(int _phase) {
     phase = _phase;
+}
+
+void CalibrationScene::setData() {
+    caliData.angle = angleCali.getAngle();
+    caliData.pitch = pitchCali.getPitch();
+    pitchCali.setAngle(angleCali.getAngle());
 }
