@@ -27,3 +27,7 @@ void CalibrationScene::draw() {
             break;
     }
 }
+
+void CalibrationScene::setPhase(int _phase) {
+    phase = _phase;
+}

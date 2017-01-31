@@ -18,4 +18,5 @@ public:
     void setup();
     void update();
     void draw();
+    void setPhase(int _phase);
 };

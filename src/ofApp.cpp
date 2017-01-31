@@ -17,7 +17,12 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if (key == ofToInt("a")) {
+        caliScene.setPhase(CALIBRATION_PHASE_ANGLE);
+    }
+    if (key == ofToInt("s")) {
+        caliScene.setPhase(CALIBRATION_PHASE_PITH);
+    }
 }
 
 //--------------------------------------------------------------
