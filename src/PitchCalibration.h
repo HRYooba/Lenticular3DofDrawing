@@ -9,9 +9,11 @@ private:
     float angle;
     float width;
     float height;
-    
-    int convertDiagonalPosX(int x, int y);
-    int convertDiagonalPosY(int x, int y);
+    const ofColor PINK = ofColor(255, 0, 255);
+    const ofColor YELLOW = ofColor(255, 255, 0);
+    ofColor calculateColor(int x, int y);
+    ofShader shader;
+    ofFbo fbo;
     
 public:
     void setup();

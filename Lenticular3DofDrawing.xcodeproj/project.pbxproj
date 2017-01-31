@@ -95,6 +95,7 @@
 		87A34EA31E40F78F00BF6C17 /* CalibrationScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalibrationScene.h; sourceTree = "<group>"; };
 		87A34EA51E4105E600BF6C17 /* PitchCalibration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchCalibration.cpp; sourceTree = "<group>"; };
 		87A34EA61E4105E600BF6C17 /* PitchCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchCalibration.h; sourceTree = "<group>"; };
+		87D0F9491E411B3B00E08D49 /* PitchDisplay.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PitchDisplay.frag; sourceTree = "<group>"; };
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		8B30E93FD3D3475EED522A0E /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscBundle.h; path = ../../../addons/ofxOsc/src/ofxOscBundle.h; sourceTree = SOURCE_ROOT; };
@@ -202,6 +203,15 @@
 			name = oscpack;
 			sourceTree = "<group>";
 		};
+		87D0F9481E411B3B00E08D49 /* shader */ = {
+			isa = PBXGroup;
+			children = (
+				87D0F9491E411B3B00E08D49 /* PitchDisplay.frag */,
+			);
+			name = shader;
+			path = bin/data/shader;
+			sourceTree = SOURCE_ROOT;
+		};
 		A763ED608B35AE3310251DEE /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +297,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				87D0F9481E411B3B00E08D49 /* shader */,
 				87A34EA11E40F21000BF6C17 /* def.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,

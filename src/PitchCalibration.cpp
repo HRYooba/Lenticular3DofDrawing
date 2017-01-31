@@ -4,40 +4,42 @@
 void PitchCalibration::setup() {
     width = ofGetWidth();
     height = ofGetHeight();
+    shader.load("", "shader/PitchDisplay.frag");
+    fbo.allocate(width, height);
 }
 
 void PitchCalibration::update() {
-    
+    fbo.begin();
+    shader.begin();
+    shader.setUniform1f("u_angle", angle);
+    ofDrawRectangle(0, 0, width, height);
+    shader.end();
+    fbo.end();
 }
 
 void PitchCalibration::draw() {
-    ofPushMatrix();
-//    ofTranslate(width / 2.0, height / 2.0);
-//    ofRotate(angle / PI * 180.0);
-    for (int x = 0; x < width; x ++) {
-        for (int y = 0; y < height; y ++) {
-            
-        }
+    fbo.draw(0, 0);
+//    ofPushMatrix();
+//    for (int x = 0; x < width; x ++) {
+//        for (int y = 0; y < height; y ++) {
+//            ofSetColor(calculateColor(x, y));
+//            ofDrawEllipse(x, y, 1, 1);
+//        }
+//    }
+//    ofPopMatrix();
+}
+
+ofColor PitchCalibration::calculateColor(int x, int y) {
+    // b = y - a * x
+    ofColor result;
+    float a = tan(angle);
+    int b = roundf(y - a * x);
+    if (b % 2 == 0) {
+        result = YELLOW;
+    } else {
+        result = PINK;
     }
-    ofPopMatrix();
-}
-
-int PitchCalibration::convertDiagonalPosX(int x, int y) {
-    // X = (Y - b) / a
-    int X;
-    float a = tan(angle);
-    float b = convertDiagonalPosY(0, y);
-    X = int((y - b) / a);
-    return X;
-}
-
-int PitchCalibration::convertDiagonalPosY(int x, int y) {
-    // Y = aX + b
-    int Y;
-    float a = tan(angle);
-    float b = y;
-    Y = int(a * x + b);
-    return Y;
+    return result;
 }
 
 void PitchCalibration::setAngle(float _angle) {

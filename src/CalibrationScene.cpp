@@ -39,4 +39,5 @@ void CalibrationScene::setData() {
     caliData.angle = angleCali.getAngle();
     caliData.pitch = pitchCali.getPitch();
     pitchCali.setAngle(angleCali.getAngle());
+    cout << caliData.angle << endl;
 }
