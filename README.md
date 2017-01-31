@@ -1,0 +1,2 @@
+# Lenticular3DofDrawing
+レンチキュラーを使って自分で描いた絵を3Dで見ようぜ
