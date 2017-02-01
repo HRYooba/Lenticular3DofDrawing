@@ -19,10 +19,13 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == 'a') {
-        scene.setPhase(CALIBRATION_PHASE_ANGLE);
+        scene.setPhase(PHASE_ANGLE);
     }
     if (key == 's') {
-        scene.setPhase(CALIBRATION_PHASE_PITH);
+        scene.setPhase(PHASE_PITH);
+    }
+    if (key == 'd') {
+        scene.setPhase(PHASE_DISPLAY);
     }
     if (key == OF_KEY_UP) {
         scene.changePitch(OF_KEY_UP);

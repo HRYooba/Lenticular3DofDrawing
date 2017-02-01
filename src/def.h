@@ -1,6 +1,7 @@
 // 定義ファイル
-#define CALIBRATION_PHASE_ANGLE 0
-#define CALIBRATION_PHASE_PITH 1
+#define PHASE_ANGLE 0
+#define PHASE_PITH 1
+#define PHASE_DISPLAY 2
 
 struct CalibrationData {
     float angle;

@@ -3,7 +3,7 @@
 void Scene::setup() {
     width = ofGetWidth();
     height = ofGetHeight();
-    phase = CALIBRATION_PHASE_ANGLE;
+    phase = PHASE_ANGLE;
     caliData = {0, 0};
     angleCali.setup();
     pitchCali.setup();
@@ -11,22 +11,26 @@ void Scene::setup() {
 
 void Scene::update() {
     switch (phase) {
-        case CALIBRATION_PHASE_ANGLE:
+        case PHASE_ANGLE:
             angleCali.update();
             break;
-        case CALIBRATION_PHASE_PITH:
+        case PHASE_PITH:
             pitchCali.update();
+            break;
+        case PHASE_DISPLAY:
             break;
     }
 }
 
 void Scene::draw() {
     switch (phase) {
-        case CALIBRATION_PHASE_ANGLE:
+        case PHASE_ANGLE:
             angleCali.draw();
             break;
-        case CALIBRATION_PHASE_PITH:
+        case PHASE_PITH:
             pitchCali.draw();
+            break;
+        case PHASE_DISPLAY:
             break;
     }
 }
@@ -42,14 +46,14 @@ void Scene::setData() {
 }
 
 void Scene::changePitch(int inputKey) {
-    if (phase != CALIBRATION_PHASE_PITH) {
+    if (phase != PHASE_PITH) {
         return;
     }
     inputKey == OF_KEY_UP ? pitchCali.increasePitch() : pitchCali.reducePitch();
 }
 
 void Scene::changeDegit(int inputKey) {
-    if (phase != CALIBRATION_PHASE_PITH) {
+    if (phase != PHASE_PITH) {
         return;
     }
     inputKey == OF_KEY_RIGHT ? pitchCali.moveRightDegit() : pitchCali.moveLeftDegit();
