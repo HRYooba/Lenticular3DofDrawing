@@ -1,30 +1,19 @@
 uniform float u_angle;
+uniform float u_pitch;
+uniform vec2 u_resolution;
+
+#define PI 3.14159
 
 void main() {
+    vec4 YELLOW = vec4(1.0, 1.0, 0.0, 1.0);
+    vec4 PINK = vec4(1.0, 0.0, 1.0, 1.0);
+    
     vec2 pos = gl_FragCoord.xy;
+    vec2 uv = pos / u_resolution;
     
-    // b = y - a * x
+    float phase = uv.x * cos(u_angle) + uv.y * sin(u_angle);
     vec4 result = vec4(0.0);
-    float a = tan(u_angle);
-    float b = pos.y - a * pos.x;
-    
-    // 四捨五入
-//    float decimals = b - b / 1.0;
-//    float trueb = 0.0;
-//    if (decimals >= 0.5) {
-//        trueb = b / 1.0 + 1.0;
-//    } else {
-//        trueb = b / 1.0;
-//    }
-    
-    // 何色か決定
-//    if (mod(b, 2.0) == 0.0) {
-//        result = vec4(1.0, 0.0, 1.0, 1.0);
-//    } else {
-//        result = vec4(1.0, 1.0, 0.0, 1.0);
-//    }
-//    result = vec4(b, 0.0, 0.0, 1.0);
-    result = vec4(mix(vec3(1.0, 0.0, 1.0), vec3(1.0, 1.0, 0.0), mod(b, 2.0)), 1.0);
+    sin(phase * u_resolution.y * PI / u_pitch) > 0.0 ? result = YELLOW : result = PINK;
     
     gl_FragColor = result;
 }

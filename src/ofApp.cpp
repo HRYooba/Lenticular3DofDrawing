@@ -24,6 +24,18 @@ void ofApp::keyPressed(int key){
     if (key == 's') {
         caliScene.setPhase(CALIBRATION_PHASE_PITH);
     }
+    if (key == OF_KEY_UP) {
+        caliScene.changePitch(OF_KEY_UP);
+    }
+    if (key == OF_KEY_DOWN) {
+        caliScene.changePitch(OF_KEY_DOWN);
+    }
+    if (key == OF_KEY_LEFT) {
+        caliScene.changeDegit(OF_KEY_LEFT);
+    }
+    if (key == OF_KEY_RIGHT) {
+        caliScene.changeDegit(OF_KEY_RIGHT);
+    }
     caliScene.setData();
 }
 

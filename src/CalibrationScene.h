@@ -22,4 +22,6 @@ public:
     void draw();
     void setPhase(int _phase);
     void setData();
+    void changePitch(int inputKey);
+    void changeDegit(int inputKey);
 };

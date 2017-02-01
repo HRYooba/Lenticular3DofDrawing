@@ -39,5 +39,18 @@ void CalibrationScene::setData() {
     caliData.angle = angleCali.getAngle();
     caliData.pitch = pitchCali.getPitch();
     pitchCali.setAngle(angleCali.getAngle());
-    cout << caliData.angle << endl;
+}
+
+void CalibrationScene::changePitch(int inputKey) {
+    if (phase != CALIBRATION_PHASE_PITH) {
+        return;
+    }
+    inputKey == OF_KEY_UP ? pitchCali.increasePitch() : pitchCali.reducePitch();
+}
+
+void CalibrationScene::changeDegit(int inputKey) {
+    if (phase != CALIBRATION_PHASE_PITH) {
+        return;
+    }
+    inputKey == OF_KEY_RIGHT ? pitchCali.moveRightDegit() : pitchCali.moveLeftDegit();
 }

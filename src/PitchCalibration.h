@@ -9,9 +9,8 @@ private:
     float angle;
     float width;
     float height;
-    const ofColor PINK = ofColor(255, 0, 255);
-    const ofColor YELLOW = ofColor(255, 255, 0);
-    ofColor calculateColor(int x, int y);
+    int degitPos;
+    const int DEGIT_SIZE = 5;
     ofShader shader;
     ofFbo fbo;
     
@@ -20,5 +19,9 @@ public:
     void update();
     void draw();
     void setAngle(float _angle);
+    void reducePitch();
+    void increasePitch();    
+    void moveRightDegit();
+    void moveLeftDegit();
     float getPitch();
 };
