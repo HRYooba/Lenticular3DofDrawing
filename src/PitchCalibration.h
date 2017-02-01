@@ -10,7 +10,7 @@ private:
     float width;
     float height;
     int degitPos;
-    const int DEGIT_SIZE = 5;
+    const int DEGIT_SIZE = 4;
     ofShader shader;
     ofFbo fbo;
     

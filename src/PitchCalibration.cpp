@@ -32,13 +32,45 @@ void PitchCalibration::setAngle(float _angle) {
 }
 
 void PitchCalibration::increasePitch() {
-    pitch += 0.1;
+    switch (degitPos) {
+        case 0:
+            pitch ++;
+            break;
+        case 1:
+            pitch += 0.1;
+            break;
+        case 2:
+            pitch += 0.01;
+            break;
+        case 3:
+            pitch += 0.001;
+            break;
+        case 4:
+            pitch += 0.0001;
+            break;
+    }
 }
 
 void PitchCalibration::reducePitch() {
-    pitch -= 0.1;
-    if (pitch < 0) {
-        pitch = 0;
+    switch (degitPos) {
+        case 0:
+            pitch --;
+            break;
+        case 1:
+            pitch -= 0.1;
+            break;
+        case 2:
+            pitch -= 0.01;
+            break;
+        case 3:
+            pitch -= 0.001;
+            break;
+        case 4:
+            pitch -= 0.0001;
+            break;
+    }
+    if (pitch < 1) {
+        pitch = 1;
     }
 }
 
