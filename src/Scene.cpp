@@ -1,4 +1,4 @@
-#include "CalibrationScene.h"
+#include "Scene.h"
 
 void CalibrationScene::setup() {
     width = ofGetWidth();

@@ -69,8 +69,8 @@ void PitchCalibration::reducePitch() {
             pitch -= 0.0001;
             break;
     }
-    if (pitch < 1) {
-        pitch = 1;
+    if (pitch < 0) {
+        pitch = 0;
     }
 }
 

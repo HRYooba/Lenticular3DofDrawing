@@ -5,7 +5,7 @@
 #include "AngleCalibration.h"
 #include "PitchCalibration.h"
 
-class CalibrationScene {
+class Scene {
     
 private:
     float width;

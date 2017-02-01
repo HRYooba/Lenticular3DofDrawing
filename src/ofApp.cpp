@@ -2,41 +2,41 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    caliScene.setup();
+    scene.setup();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    caliScene.update();
+    scene.update();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(100);
-    caliScene.draw();
+    scene.draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == 'a') {
-        caliScene.setPhase(CALIBRATION_PHASE_ANGLE);
+        scene.setPhase(CALIBRATION_PHASE_ANGLE);
     }
     if (key == 's') {
-        caliScene.setPhase(CALIBRATION_PHASE_PITH);
+        scene.setPhase(CALIBRATION_PHASE_PITH);
     }
     if (key == OF_KEY_UP) {
-        caliScene.changePitch(OF_KEY_UP);
+        scene.changePitch(OF_KEY_UP);
     }
     if (key == OF_KEY_DOWN) {
-        caliScene.changePitch(OF_KEY_DOWN);
+        scene.changePitch(OF_KEY_DOWN);
     }
     if (key == OF_KEY_LEFT) {
-        caliScene.changeDegit(OF_KEY_LEFT);
+        scene.changeDegit(OF_KEY_LEFT);
     }
     if (key == OF_KEY_RIGHT) {
-        caliScene.changeDegit(OF_KEY_RIGHT);
+        scene.changeDegit(OF_KEY_RIGHT);
     }
-    caliScene.setData();
+    scene.setData();
 }
 
 //--------------------------------------------------------------
