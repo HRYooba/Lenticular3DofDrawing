@@ -1,6 +1,6 @@
 #include "Scene.h"
 
-void CalibrationScene::setup() {
+void Scene::setup() {
     width = ofGetWidth();
     height = ofGetHeight();
     phase = CALIBRATION_PHASE_ANGLE;
@@ -9,7 +9,7 @@ void CalibrationScene::setup() {
     pitchCali.setup();
 }
 
-void CalibrationScene::update() {
+void Scene::update() {
     switch (phase) {
         case CALIBRATION_PHASE_ANGLE:
             angleCali.update();
@@ -20,7 +20,7 @@ void CalibrationScene::update() {
     }
 }
 
-void CalibrationScene::draw() {
+void Scene::draw() {
     switch (phase) {
         case CALIBRATION_PHASE_ANGLE:
             angleCali.draw();
@@ -31,24 +31,24 @@ void CalibrationScene::draw() {
     }
 }
 
-void CalibrationScene::setPhase(int _phase) {
+void Scene::setPhase(int _phase) {
     phase = _phase;
 }
 
-void CalibrationScene::setData() {
+void Scene::setData() {
     caliData.angle = angleCali.getAngle();
     caliData.pitch = pitchCali.getPitch();
     pitchCali.setAngle(angleCali.getAngle());
 }
 
-void CalibrationScene::changePitch(int inputKey) {
+void Scene::changePitch(int inputKey) {
     if (phase != CALIBRATION_PHASE_PITH) {
         return;
     }
     inputKey == OF_KEY_UP ? pitchCali.increasePitch() : pitchCali.reducePitch();
 }
 
-void CalibrationScene::changeDegit(int inputKey) {
+void Scene::changeDegit(int inputKey) {
     if (phase != CALIBRATION_PHASE_PITH) {
         return;
     }
