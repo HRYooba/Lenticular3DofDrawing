@@ -7,6 +7,7 @@ void Scene::setup() {
     caliData = {0, 0};
     angleCali.setup();
     pitchCali.setup();
+    display.setup();
 }
 
 void Scene::update() {
@@ -18,6 +19,7 @@ void Scene::update() {
             pitchCali.update();
             break;
         case PHASE_DISPLAY:
+            display.update();
             break;
     }
 }
@@ -31,6 +33,7 @@ void Scene::draw() {
             pitchCali.draw();
             break;
         case PHASE_DISPLAY:
+            display.draw();
             break;
     }
 }
@@ -42,7 +45,17 @@ void Scene::setPhase(int _phase) {
 void Scene::setData() {
     caliData.angle = angleCali.getAngle();
     caliData.pitch = pitchCali.getPitch();
-    pitchCali.setAngle(angleCali.getAngle());
+    switch (phase) {
+        case PHASE_ANGLE:
+            break;
+        case PHASE_PITH:
+            pitchCali.setAngle(caliData.angle);
+            break;
+        case PHASE_DISPLAY:
+            display.setAngle(caliData.angle);
+            display.setPitch(caliData.pitch);
+            break;
+    }
 }
 
 void Scene::changePitch(int inputKey) {

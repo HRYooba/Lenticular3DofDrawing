@@ -4,6 +4,7 @@
 #include "def.h"
 #include "AngleCalibration.h"
 #include "PitchCalibration.h"
+#include "DrawingDisplay.h"
 
 class Scene {
     
@@ -15,6 +16,7 @@ private:
     CalibrationData caliData;
     AngleCalibration angleCali;
     PitchCalibration pitchCali;
+    DrawingDisplay display;
     
 public:
     void setup();

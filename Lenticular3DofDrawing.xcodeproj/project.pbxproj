@@ -24,6 +24,7 @@
 		87A34EA01E40F13B00BF6C17 /* AngleCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A34E9E1E40F13B00BF6C17 /* AngleCalibration.cpp */; };
 		87A34EA41E40F78F00BF6C17 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A34EA21E40F78F00BF6C17 /* Scene.cpp */; };
 		87A34EA71E4105E600BF6C17 /* PitchCalibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87A34EA51E4105E600BF6C17 /* PitchCalibration.cpp */; };
+		87D0F94E1E41F08200E08D49 /* DrawingDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 87D0F94C1E41F08200E08D49 /* DrawingDisplay.cpp */; };
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
@@ -96,6 +97,10 @@
 		87A34EA51E4105E600BF6C17 /* PitchCalibration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PitchCalibration.cpp; sourceTree = "<group>"; };
 		87A34EA61E4105E600BF6C17 /* PitchCalibration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PitchCalibration.h; sourceTree = "<group>"; };
 		87D0F9491E411B3B00E08D49 /* PitchDisplay.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = PitchDisplay.frag; sourceTree = "<group>"; };
+		87D0F94C1E41F08200E08D49 /* DrawingDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawingDisplay.cpp; sourceTree = "<group>"; };
+		87D0F94D1E41F08200E08D49 /* DrawingDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingDisplay.h; sourceTree = "<group>"; };
+		87D0F9501E41F81200E08D49 /* DrawingDisplay.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = DrawingDisplay.frag; sourceTree = "<group>"; };
+		87D0F9511E4200EE00E08D49 /* AngleDisplay.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = AngleDisplay.frag; sourceTree = "<group>"; };
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		8B30E93FD3D3475EED522A0E /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscBundle.h; path = ../../../addons/ofxOsc/src/ofxOscBundle.h; sourceTree = SOURCE_ROOT; };
@@ -206,6 +211,8 @@
 		87D0F9481E411B3B00E08D49 /* shader */ = {
 			isa = PBXGroup;
 			children = (
+				87D0F9511E4200EE00E08D49 /* AngleDisplay.frag */,
+				87D0F9501E41F81200E08D49 /* DrawingDisplay.frag */,
 				87D0F9491E411B3B00E08D49 /* PitchDisplay.frag */,
 			);
 			name = shader;
@@ -308,6 +315,8 @@
 				87A34E9F1E40F13B00BF6C17 /* AngleCalibration.h */,
 				87A34EA51E4105E600BF6C17 /* PitchCalibration.cpp */,
 				87A34EA61E4105E600BF6C17 /* PitchCalibration.h */,
+				87D0F94C1E41F08200E08D49 /* DrawingDisplay.cpp */,
+				87D0F94D1E41F08200E08D49 /* DrawingDisplay.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -440,6 +449,7 @@
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				87A34EA01E40F13B00BF6C17 /* AngleCalibration.cpp in Sources */,
+				87D0F94E1E41F08200E08D49 /* DrawingDisplay.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,

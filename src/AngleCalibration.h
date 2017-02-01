@@ -8,6 +8,8 @@ private:
     float angle;
     float width;
     float height;
+    ofShader shader;
+    ofFbo fbo;
     
 public:
     void setup();

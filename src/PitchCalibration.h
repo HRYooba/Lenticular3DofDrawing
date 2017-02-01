@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 
+#define DEGIT_SIZE 4
+
 class PitchCalibration {
     
 private:
@@ -10,7 +12,6 @@ private:
     float width;
     float height;
     int degitPos;
-    const int DEGIT_SIZE = 4;
     ofShader shader;
     ofFbo fbo;
     
