@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 
-#define VIEWPOINT_COUNT 32
+#define VIEWPOINT_COUNT 15
 
 class DrawingDisplay {
     
