@@ -42,8 +42,8 @@ void main() {
     vec2 uv = pos / u_resolution;
     
     float phase = uv.x * cos(u_angle) + uv.y * sin(u_angle);
-    float check = sin(phase * u_resolution.y * PI / u_pitch);
-//    vec4 result = vec4(0.0, 1.0, 0.0, 1.0);
+//    float check = sin(phase * u_resolution.y * PI / u_pitch);
+    vec4 result = vec4(0.0, 1.0, 0.0, 1.0);
     
     //    check > 0.0 ? result = texture2DRect(u_tex0, pos) : result = texture2DRect(u_tex1, pos);
     
