@@ -35,23 +35,40 @@ uniform sampler2DRect u_tex30;
 uniform sampler2DRect u_tex31;
 
 #define PI 3.14159
+#define SAMPLE_NUM 8.0
 
 void main() {
     vec2 pos = gl_FragCoord.xy;
     vec2 uv = pos / u_resolution;
     
-    // turn = 0.0 or 1.0
     float phase = uv.x * cos(u_angle) + uv.y * sin(u_angle);
-    vec4 result = vec4(0.0);
+    float check = sin(phase * u_resolution.y * PI / u_pitch);
+    vec4 result = vec4(1.0);
+    
     float turn = 0.0;
+    check > 0.0 ? turn = 0.0 : turn = 1.0;
+//    check > 0.0 ? result = texture2DRect(u_tex0, pos) : result = texture2DRect(u_tex1, pos);
     
-    sin(phase * u_resolution.y * PI / u_pitch) > 0.0 ? turn = 0.0 : turn = 1.0;
-    
-    if (turn == 0.0) {
+    float target = phase * u_resolution.y * PI / u_pitch;
+    if (mod(target, SAMPLE_NUM) >= 0.0 && mod(target, SAMPLE_NUM) < 1.0 && turn == 0.0) {
         result = texture2DRect(u_tex0, pos);
-    } else {
+    } else if (mod(target, SAMPLE_NUM) >= 1.0 && mod(target, SAMPLE_NUM) < 2.0 && turn == 1.0) {
         result = texture2DRect(u_tex1, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 2.0 && mod(target, SAMPLE_NUM) < 3.0 && turn == 0.0) {
+        result = texture2DRect(u_tex2, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 3.0 && mod(target, SAMPLE_NUM) < 4.0 && turn == 1.0) {
+        result = texture2DRect(u_tex3, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 4.0 && mod(target, SAMPLE_NUM) < 5.0 && turn == 0.0) {
+        result = texture2DRect(u_tex4, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 5.0 && mod(target, SAMPLE_NUM) < 6.0 && turn == 1.0) {
+        result = texture2DRect(u_tex5, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 6.0 && mod(target, SAMPLE_NUM) < 7.0 && turn == 0.0) {
+        result = texture2DRect(u_tex6, pos);
+    } else if (mod(target, SAMPLE_NUM) >= 7.0 && mod(target, SAMPLE_NUM) < 8.0 && turn == 1.0) {
+        result = texture2DRect(u_tex7, pos);
     }
+    
+    result = vec4(mod(target, SAMPLE_NUM) / SAMPLE_NUM, 0.0, 0.0, 1.0);
     
     gl_FragColor = result;
 }
