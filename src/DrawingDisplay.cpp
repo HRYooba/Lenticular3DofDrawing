@@ -16,6 +16,9 @@ void DrawingDisplay::update() {
     shader.setUniform1f("u_angle", angle + PI / 2.0);
     shader.setUniform1f("u_pitch", pitch);
     shader.setUniform2f("u_resolution", width, height);
+    for (int i = 0; i < VIEWPOINT_COUNT; i ++) {
+        shader.setUniformTexture("u_tex" + ofToString(i), tex[i], i + 1);
+    }
     ofDrawRectangle(0, 0, width, height);
     shader.end();
     fbo.end();
