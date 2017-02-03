@@ -43,12 +43,12 @@ void main() {
     
     float phase = uv.x * cos(u_angle) + uv.y * sin(u_angle);
     float check = sin(phase * u_resolution.y * PI / u_pitch);
-    vec4 result = vec4(0.0, 1.0, 0.0, 1.0);
+//    vec4 result = vec4(0.0, 1.0, 0.0, 1.0);
     
     //    check > 0.0 ? result = texture2DRect(u_tex0, pos) : result = texture2DRect(u_tex1, pos);
     
     
-    float target = check * SAMPLE_NUM;
+    float target = mod(phase * u_resolution.y / u_pitch, 1.0) * SAMPLE_NUM;
     if (mod(target, SAMPLE_NUM) >= 0.0 && mod(target, SAMPLE_NUM) < 1.0) {
         result = texture2DRect(u_tex0, pos);
     } else if (mod(target, SAMPLE_NUM) >= 1.0 && mod(target, SAMPLE_NUM) < 2.0) {
