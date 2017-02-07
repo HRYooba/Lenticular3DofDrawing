@@ -6,7 +6,7 @@ void DrawingDisplay::setup() {
     shader.load("", "shader/DrawingDisplay.frag");
     fbo.allocate(width, height);
     for (int i = 0; i < VIEWPOINT_COUNT; i ++) {
-        ofLoadImage(tex[i], "image/blender_00000_" + ofToString(i) + ".jpg");
+        ofLoadImage(tex[i], "image/image" + ofToString(i) + ".png");
     }
 }
 

@@ -25,6 +25,9 @@ void Scene::update() {
 }
 
 void Scene::draw() {
+    ofPushMatrix();    
+    ofTranslate(width, 0);
+    ofScale(-1, 1);
     switch (phase) {
         case PHASE_ANGLE:
             angleCali.draw();
@@ -36,6 +39,9 @@ void Scene::draw() {
             display.draw();
             break;
     }
+    ofPopMatrix();
+    ofSetColor(0);
+    ofDrawBitmapString(ofToString(caliData.pitch), 10, 20);
 }
 
 void Scene::setPhase(int _phase) {
