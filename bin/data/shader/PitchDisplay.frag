@@ -7,8 +7,8 @@ uniform vec2 u_resolution;
 
 
 void main() {
-    vec4 YELLOW = vec4(1.0, 1.0, 0.0, 1.0);
-    vec4 PINK = vec4(1.0, 0.0, 1.0, 1.0);
+    vec4 WHITE = vec4(1.0, 1.0, 1.0, 1.0);
+    vec4 BLACK = vec4(0.0, 0.0, 0.0, 1.0);
     
     vec2 pos = gl_FragCoord.xy;
     vec2 uv = pos / u_resolution;
@@ -17,11 +17,11 @@ void main() {
     vec4 result = vec4(0.0);
     
     // 0.0 ~ 1.0 * SAMPLE_NUM
-    float target = (1.0 + cos(phase * u_resolution.y * PI / u_pitch)) / 2.0 * SAMPLE_NUM;
-    if (mod(target, SAMPLE_NUM) >= 0.0 && mod(target, SAMPLE_NUM) < 1.0) {
-        result = YELLOW;
-    } else if (mod(target, SAMPLE_NUM) >= 1.0 && mod(target, SAMPLE_NUM) <= 2.0) {
-        result = PINK;
+    float target = floor((1.0 + cos(phase * u_resolution.y * PI / u_pitch)) / 2.0 * SAMPLE_NUM);
+    if (floor(mod(target, SAMPLE_NUM)) == 0.0) {
+        result = WHITE;
+    } else if (floor(mod(target, SAMPLE_NUM)) == 1.0) {
+        result = BLACK;
     }
     
     gl_FragColor = result;
