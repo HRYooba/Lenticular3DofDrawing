@@ -23,8 +23,6 @@ void PitchCalibration::update() {
 void PitchCalibration::draw() {
     ofSetColor(255);
     fbo.draw(0, 0);
-    ofSetColor(0);
-    ofDrawBitmapString(ofToString(pitch), 10, 20);
 }
 
 void PitchCalibration::setAngle(float _angle) {

@@ -9,6 +9,6 @@ void main() {
     
     float phase = uv.x * cos(u_angle) + uv.y * sin(u_angle);
     vec4 result = vec4(0.0, 0.0, 0.0, 1.0);
-    sin(phase) > 0.0 && sin(phase) < 0.0009 ? result = vec4(1.0) : result = vec4(0.0, 0.0, 0.0, 1.0);
+    sin(phase) > 0.0 && sin(phase) < 0.001 ? result = vec4(1.0) : result = vec4(0.0, 0.0, 0.0, 1.0);
     gl_FragColor = result;
 }

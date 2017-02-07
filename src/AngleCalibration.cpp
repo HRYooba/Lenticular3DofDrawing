@@ -9,7 +9,7 @@ void AngleCalibration::setup() {
 
 void AngleCalibration::update(){
     if (ofGetMousePressed()) {
-        angle = atan2(ofGetMouseY(), ofGetMouseX());
+        angle = atan2(ofGetMouseY(), width - ofGetMouseX());
     }
     fbo.begin();
     shader.begin();
